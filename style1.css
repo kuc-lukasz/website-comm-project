@@ -51,16 +51,8 @@ nav {
   z-index: 2;
   position: absolute;
 }
-/* nav::after{
-  content: "";
-  position: fixed;
-  border-top: 5px double white;
-  width: 900px;
-  top: ;
-  right: 0;
 
 
-} */
 .navigation {
   margin-right: 6rem;
   display: flex;
@@ -85,10 +77,10 @@ li.li-nav :hover {
   content: "";
   position: fixed;
   border-top: 3px double gold;
-  width: 1000px;
   right: 0;
   position: absolute;
   right: -150px;
+  left: -150px;
   top: 81px
 }
 
