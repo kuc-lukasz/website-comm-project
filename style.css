@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Mukta&family=Rubik:wght@300&display=swap");
 
+@font-face {
+  font-family: 'custom';
+  src: url("Fonts/ufonts.com_geometric-231-bold-bt.ttf");
+  src: url("/Fonts/Geometric231TL-RomanC\ 16.ttf");
+}
+
 
 body {
   background: rgb(20, 16, 15);
@@ -16,7 +22,7 @@ body {
   margin: 0;
   overflow-y: auto;
   overflow-x: hidden;
-  font-family: "Mukta", sans-serif;
+  font-family: "custom", sans-serif;
   height: 100vh;
   box-sizing: border-box;
 }
@@ -58,7 +64,7 @@ nav {
 .navigation {
   margin-right: 6rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
   position: relative;
@@ -90,10 +96,11 @@ li.li-nav :hover {
   content: "";
   position: fixed;
   border-top: 5px double white;
-  width: 1000px;
+  /* width: 100v; */
   right: 0;
   position: absolute;
   right: -150px;
+  left: -150px;
   top: 80px
 }
 
@@ -115,7 +122,7 @@ li.li-nav > * {
   font-size: xx-large;
   color: white;
   flex-direction: column;
-  transition:  3s cubic-bezier(0.23, 1, 0.32, 1);
+  transition:  1s cubic-bezier(0.23, 1, 0.32, 1);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -145,9 +152,9 @@ button {
   height: 50px;
   border: none;
   outline: none;
-  background-color: rgb(0, 8, 51);
+  background-color: rgb(255, 255, 255);
   font-size: 1.1rem;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 8, 51);
   font-weight: 500;
   box-shadow: 2px 4px 10px black;
   transition: all 0.5s;
@@ -186,16 +193,16 @@ video {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  background-color: rgba(0, 8, 51, 0.808);
+  height: max-content;
 }
 .partner-zone-boxes {
   width: 385px;
-  /* height: 210px; */
   margin: 40px;
   border-radius: 10px;
   padding: 10px;
   margin: 15px;
   overflow: auto;
-
   text-align: center;
 }
 
@@ -207,13 +214,10 @@ video {
 .others-zone {
   position: absolute;
   width: 1280px;
-  height: 580px;
   border-radius: 50px;
   bottom: 50px;
   padding: 20px;
-  transition:  3s cubic-bezier(0.23, 1, 0.32, 1);
-  color: white;
-  
+  transition:  1s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .youve-got {
@@ -228,15 +232,19 @@ video {
   width: 600px;
 }
 .ul-list {
+  display:flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .display {
   margin: 15px;
-  background-color: rgba(0, 8, 51, 0.808);
+  /* background-color: rgba(0, 8, 51, 0.808); */
   border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 2px 4px 10px black;
+  overflow: auto;
+  /* box-shadow: 2px 4px 10px black; */
   border: 0px;
   color: rgb(224, 192, 8);
   font-weight: 500;
@@ -252,34 +260,35 @@ span {
   margin-bottom: 0px;
 }
 .view {
-  top:300px; 
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 0;
+  position: absolute; 
+  top: 100px;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+  width: 1280px;
   
 }
 .left {
-  top: -2000px;
+  left: -3000px;
+  transition:  1s cubic-bezier(0.23, 1, 0.32, 1);
   
 }
 p.header-inv-zone {
   order: 0;
   width: 850px;
-  height: 100px;
+  height: 10px;
   text-align: center;
   font-size: large;
   font-weight: 500;
   letter-spacing: 1px;
 }
 .boxes{
-  background-color: rgba(0, 8, 51, 0.808);
-  border-radius: 30px;
+ 
   text-align: center;
   box-sizing: border-box;
   color: white;;
-  box-shadow: 2px 4px 10px black;
+  
 }
 /* .inv-zone {
   display: flex;
@@ -304,6 +313,9 @@ p.header-inv-zone {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgba(0, 8, 51, 0.808);
+  box-shadow: 2px 4px 10px black;
+  height: auto;
 }
 .innov-zone-boxes {
   width: 500px;
@@ -312,6 +324,9 @@ p.header-inv-zone {
   padding: 20px;
   overflow: auto;
   letter-spacing: 1px;
+}
+.justowanie{
+  text-align: justify;
 }
 .innov-zone-boxes-tittle,
 .mission-zone-boxes-tittle {
@@ -324,6 +339,9 @@ p.header-inv-zone {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgba(0, 8, 51, 0.808);
+  box-shadow: 2px 4px 10px black;
+  height: auto;;
 }
 .mission-zone-boxes {
   width: 800px;
@@ -342,7 +360,7 @@ p.header-inv-zone {
   align-items: center;
   background-color: rgba(0, 8, 51, 0.808);
   height: 230px;
-  
+  top:150px;
 
 }
 .inv-img{
