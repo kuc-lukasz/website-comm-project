@@ -9,6 +9,8 @@ const invZone = document.querySelector(".investor-zone")
 const innovZone = document.querySelector('.innov-zone')
 const missionZone = document.querySelector('.mission-zone')
 
+const hamburgerBtn = document.querySelector("#hamburger");
+const navMenu = document.querySelector(".navigation");
 
 partnerBtn.addEventListener('click', () => {
     partnerZone.classList.remove('left')
@@ -19,6 +21,9 @@ partnerBtn.addEventListener('click', () => {
         missionZone.classList.add('left')
 
         partnerZone.classList.add('view')
+
+        mobile()
+        
 })
 
 investorBtn.addEventListener('click', ()=> {
@@ -30,6 +35,8 @@ investorBtn.addEventListener('click', ()=> {
     missionZone.classList.add('left')
 
     invZone.classList.add('view')
+    
+    navMenu.classList.remove("active");
 
 })
 
@@ -43,6 +50,8 @@ innovationBtn.addEventListener('click', ()=> {
 
         innovZone.classList.add('view')
 
+        navMenu.classList.remove("active");
+
 })
 
 missionBtn.addEventListener('click', ()=>{
@@ -55,4 +64,12 @@ missionBtn.addEventListener('click', ()=>{
 
         missionZone.classList.add('view')
 
+        navMenu.classList.remove("active");
 })
+
+function mobile() {
+    hamburgerBtn.classList.toggle("active");
+    navMenu.classList.toggle("active");
+  }
+  
+  hamburgerBtn.addEventListener("click", mobile);
