@@ -15,6 +15,7 @@ body {
     rgba(20, 16, 15, 1) 0%,
     rgba(6, 32, 59, 1) 100%
   );
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,6 +27,7 @@ body {
   font-family: "custom", sans-serif;
   height: 100vh;
   box-sizing: border-box;
+  
   
 }
 
@@ -49,11 +51,18 @@ nav {
   height: 7rem;
   display: flex;
   justify-content: flex-end;
+  flex-direction: row;
   display: block;
   z-index: 2;
   position: absolute;
 }
-
+.brand-logo {
+  width: 10%;
+  height: 10%;
+  margin-top: -20px;
+  ;
+  margin-right: 40px;
+}
 
 .navigation {
   /* margin-right: 6rem; */
@@ -75,16 +84,6 @@ li.li-nav :hover {
   font-weight: 600;
   
 }
-/* .li-nav:hover::after {
-  content: "";
-  position: fixed;
-  border-top: 3px double gold;
-  right: 0;
-  position: absolute;
-  right: -150px;
-  left: -150px;
-  top: 81px
-} */
 
 .navigation:after{
   content: "";
@@ -95,7 +94,7 @@ li.li-nav :hover {
   position: absolute;
   right: -150px;
   left: -150px;
-  top: 80px
+  top: 90px
 }
 
 
@@ -258,7 +257,7 @@ span {
 }
 .view {
   position: absolute; 
-  top: 100px;
+  top: 150px;
   left: 0; 
   right: 0; 
   margin-left: auto; 
@@ -280,6 +279,7 @@ p.header-inv-zone {
   font-weight: 500;
   letter-spacing: 1px;
 }
+
 .boxes{
  
   text-align: center;
@@ -336,12 +336,42 @@ p.header-inv-zone {
   display: flex;
   justify-content: center;
   align-items: center;
-  align-items: center;
+flex-direction: column;
   background-color: rgba(0, 8, 51, 0.808);
-  height: 230px;
+  height: min-content;
   top:150px;
 
 }
+.inv-zone-icons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+  /* background-color: rgba(0, 8, 51, 0.808); */
+  height: 230px;
+  top:150px;
+}
+.inv-boxes>p{
+  font-weight: 600;
+}
+
+.inv-describes{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+  height: 230px;
+  max-width: 600px;
+  margin-top: -50px;
+  
+}
+.inv-box-describe{
+  font-size: medium;
+  font-family: "custom";
+  text-transform: none;
+  color: white;
+
+  }
 .inv-img{
   width: 80px;
   height: 80px;
@@ -362,11 +392,27 @@ p.header-inv-zone {
   background-color:  ;
   width: 150px;
 }
+div.boxes{
+  cursor: pointer;
+  color: white;
+  
+}
+div.boxes :visited {
+  text-decoration: dashed;
+}
+div.boxes :hover {
+  color: rgb(202, 173, 5);
+  font-weight: 600;
+}
 .hide{
   display: none;
 }
 #hamburger {
   display: none;
+}
+.show{
+  display: inline-block;
+  font-size: large;
 }
 
 @media screen and (max-width:1175px){
@@ -380,6 +426,18 @@ p.header-inv-zone {
     flex-wrap: wrap;
     position: relative;
     
+}
+video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  position: fixed;
+  opacity: 0.2;
+  z-index: -1;
+  
 }
   .navigation:after{
 display: none;
@@ -459,14 +517,36 @@ display: none;
         display: flex;
         justify-content: center;
         align-items: center;
-        align-items: center;
         flex-direction: column;
         background-color: rgba(0, 8, 51, 0.808);
-        height: 230px;
-        top:230px;
-        box-sizing: border-box;
-        height: max-content;
+        top:240px;
+        /* box-sizing: border-box; */
+        width: fit-content;
+        height: fit-content;
+     
+      }
+      .inv-zone-icons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-items: center;
+        top:150px;
+        flex-wrap: wrap;
+        margin-bottom: 160px;
+      }
+      .inv-boxes>p{
+        font-weight: 600;
+      }
       
+      .inv-describes{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-items: center;
+        height: 230px;
+        max-width: 600px;
+        margin-top: -50px;
+        
       }
       .innov-zone {
         display: flex;
@@ -479,7 +559,7 @@ display: none;
       
       }
       .innov-zone-boxes {
-        width: 500px;
+        width: min-content;
         padding: 20px;
         height: min-content;
         letter-spacing: 1px;
@@ -488,7 +568,7 @@ display: none;
         height: fit-content;
       }
       .mission-zone-boxes {
-        width: 800px;
+        width: min-content;
         height: min-content;
         margin: 30px;
         overflow: auto;
@@ -500,10 +580,9 @@ display: none;
 
 @media screen and (max-width:700px){
  
-  video{
-    position: fixed;
-
-  }
+  video {
+    display: none;
+   }
   .bar {
     display: block;
     width: 25px;
@@ -529,7 +608,10 @@ display: none;
 #hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
 }
-
+img{
+  display: none; 
+  
+}
 .navigation {
   position: fixed;
   right: -100%;
