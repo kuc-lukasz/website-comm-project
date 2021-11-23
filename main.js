@@ -2,12 +2,18 @@ const partnerBtn = document.querySelector(".nav-link-farmy");
 const investorBtn = document.querySelector(".nav-link-investor");
 const innovationBtn = document.querySelector(".nav-link-innovation");
 const missionBtn = document.querySelector(".nav-link-mission");
+const kimJestesmy = document.querySelector(".kim-jestesmy");
+const kontakt = document.querySelector(".contact");
+
 
 const partnerZone = document.querySelector(".partner-zone");
 const mainCont = document.querySelector(".main-container");
 const invZone = document.querySelector(".investor-zone");
 const innovZone = document.querySelector(".innov-zone");
 const missionZone = document.querySelector(".mission-zone");
+const kimJestesmyZone = document.querySelector(".kim-jestesmy-zone");
+const kontaktZone = document.querySelector(".contact-zone");
+
 
 const hamburgerBtn = document.querySelector("#hamburger");
 const navMenu = document.querySelector(".navigation");
@@ -19,6 +25,8 @@ partnerBtn.addEventListener("click", () => {
   invZone.classList.add("left");
   innovZone.classList.add("left");
   missionZone.classList.add("left");
+  kontaktZone.classList.add("left");
+  kimJestesmyZone.classList.add("left");
 
   partnerZone.classList.add("view");
 
@@ -32,6 +40,8 @@ investorBtn.addEventListener("click", () => {
   partnerZone.classList.add("left");
   innovZone.classList.add("left");
   missionZone.classList.add("left");
+  kontaktZone.classList.add("left");
+  kimJestesmyZone.classList.add("left");
 
   invZone.classList.add("view");
 
@@ -45,6 +55,8 @@ innovationBtn.addEventListener("click", () => {
   partnerZone.classList.add("left");
   invZone.classList.add("left");
   missionZone.classList.add("left");
+  kontaktZone.classList.add("left");
+  kimJestesmyZone.classList.add("left");
 
   innovZone.classList.add("view");
 
@@ -58,11 +70,48 @@ missionBtn.addEventListener("click", () => {
   partnerZone.classList.add("left");
   invZone.classList.add("left");
   innovZone.classList.add("left");
+  kontaktZone.classList.add("left");
+  kimJestesmyZone.classList.add("left");
 
   missionZone.classList.add("view");
 
   navMenu.classList.remove("active");
 });
+
+kimJestesmy.addEventListener("click", () => {
+  kimJestesmyZone.classList.remove("left");
+
+  mainCont.classList.add("left");
+  partnerZone.classList.add("left");
+  invZone.classList.add("left");
+  innovZone.classList.add("left");
+  missionZone.classList.add("left");
+  kontaktZone.classList.add("left");
+
+  kimJestesmyZone.classList.add("view");
+
+  navMenu.classList.remove("active");
+});
+kontakt.addEventListener("click", () => {
+  kontaktZone.classList.remove("left");
+
+  mainCont.classList.add("left");
+  partnerZone.classList.add("left");
+  invZone.classList.add("left");
+  innovZone.classList.add("left");
+  missionZone.classList.add("left");
+  kimJestesmyZone.classList.add("left");
+
+  kontaktZone.classList.add("view");
+
+  navMenu.classList.remove("active");
+});
+
+
+
+
+
+
 
 function mobile() {
   hamburgerBtn.classList.toggle("active");
@@ -239,4 +288,29 @@ optymalneZaprojektowanieDescribe.classList.remove("show");
 
 })
 
+    const form = document.querySelector("#my-form");
+    
+
+    async function handleSubmit(event) {
+      event.preventDefault();
+      const status = document.getElementById("status");
+
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+         status.innerHTML = "Wiadomość wysłana!";
+        status.classList.add('success')
+       
+        form.reset()
+      }).catch(error => {
+        status.classList.add('error')
+        status.innerHTML = "Wystąpił problem, spróbuj później!"
+      });
+    }
+    form.addEventListener("submit", handleSubmit)
 
