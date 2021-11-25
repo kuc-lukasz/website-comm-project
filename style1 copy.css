@@ -7,6 +7,13 @@
   src: url("/Fonts/Geometric231TL-RomanC\ 16.ttf");
 }
 
+@font-face {
+  font-family: 'Broadway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Broadway'), url('https://fonts.cdnfonts.com/s/17522/Broadway.woff') format('woff');
+}
+
 body {
   background: rgb(20, 16, 15);
   background: linear-gradient(
@@ -122,7 +129,7 @@ li.li-nav > * {
 
 .main-heading {
   margin-bottom: 10px;
-  font-family: "Broadway", sans-serif;
+  font-family: 'Broadway';
   letter-spacing: 8px;
 }
 
@@ -220,10 +227,10 @@ video {
   text-align: center;
 }
 .requirements {
-  width: 600px;
+  width: 450px;
 }
 .benefits {
-  width: 600px;
+  width: 450px;
 }
 .ul-list {
   display: flex;
@@ -261,7 +268,7 @@ span {
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  width: 1280px;
+  width: 960px;
 }
 .left {
   left: -200vw;
@@ -295,8 +302,8 @@ p.header-inv-zone {
 }
 .innov-zone-boxes {
   width: 500px;
-  height: 500px;
-  margin: 30px;
+  height: 400px;
+  margin: 20px;
   padding: 20px;
   overflow: auto;
   letter-spacing: 1px;
@@ -307,6 +314,7 @@ p.header-inv-zone {
 .innov-zone-boxes-tittle,
 .mission-zone-boxes-tittle {
   margin-top: 0px;
+  margin-bottom: inherit;
   letter-spacing: 3px;
   font-weight: 600;
 }
@@ -321,14 +329,20 @@ p.header-inv-zone {
 }
 .mission-zone-boxes {
   width: 800px;
-  height: 400px;
   margin: 30px;
   overflow: auto;
   box-sizing: border-box;
   padding: 15px;
   letter-spacing: 1px;
 }
-
+.kim-jestesmy-zone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 8, 51, 0.808);
+  box-shadow: 2px 4px 10px black;
+  height: auto;
+}
 .investor-zone {
   display: flex;
   justify-content: center;
@@ -354,11 +368,11 @@ p.header-inv-zone {
 .inv-describes {
   display: flex;
   justify-content: center;
-  align-items: center;
-  align-items: center;
-  height: 230px;
-  max-width: 1000px;
-  margin-top: -50px;
+  align-items: flex-start;
+  height: 200px;
+  max-width: 800px;
+  margin-top: -10px;
+  font-size: 1rem;
 }
 .inv-box-describe {
   font-size: medium;
@@ -372,7 +386,7 @@ p.header-inv-zone {
   margin: 10px;
 }
 .inv-boxes {
-  margin: 10px;
+  margin: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -383,8 +397,7 @@ p.header-inv-zone {
   letter-spacing: 1px;
   text-transform: uppercase;
   text-align: center;
-  background-color: ;
-  width: 150px;
+  width: 145px;
 }
 div.boxes {
   cursor: pointer;
@@ -413,11 +426,47 @@ div > div.boxes :hover {
   justify-content: flex-start;
   align-items: center;
   margin: 0 auto;
-  flex-direction: column;
   height: max-content;
-  min-width: 400px;
 }
-.form, form{
+
+.conctact-sigle-block{
+  margin: 10px;
+}
+.contact-data{
+  width: 140px;
+  height: 300px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+margin: 5px;
+padding: 0px;
+text-decoration: none;
+}
+.contact-data1{
+  width: 215px;
+  height: 300px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+text-decoration: none;
+}
+.contact-data-img{
+width: 80px;
+height: 80px;
+margin: 0 0 20px 0;
+}
+.contact-describe{
+  color: white;
+  height: 165px;
+  display: block;
+}
+.contact-describe>p{
+  font-weight: 500;
+}
+
+/* .form, form{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -495,7 +544,7 @@ text-transform: uppercase;
 font-weight: 800;
 animation: status 2s easy forwards;
 
-}
+} */
 @keyframes status {
   0%{
     opacity: 1;
@@ -513,6 +562,14 @@ animation: status 2s easy forwards;
 
 
 @media screen and (max-width: 1175px) {
+  .contact-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    }
   .navigation {
     margin-right: 4rem;
     display: flex;
@@ -523,15 +580,7 @@ animation: status 2s easy forwards;
     position: relative;
   }
   video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100vw;
-    position: fixed;
-    opacity: 0.2;
-    z-index: -1;
+   display: none;
   }
   .navigation:after {
     display: none;
@@ -540,21 +589,8 @@ animation: status 2s easy forwards;
     right: 0;
   }
 
-  video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0.2;
-    z-index: -1;
-    background-repeat: repeat;
-    background-size: cover;
-    box-sizing: border-box;
-  }
-
   .main-heading {
-    margin-top: 100px;
+    margin-top: 220px;
     margin-bottom: 10px;
     font-family: "Broadway", sans-serif;
     letter-spacing: 8px;
@@ -604,7 +640,7 @@ animation: status 2s easy forwards;
     bottom: 50px;
     padding: 20px;
     transition: 1s cubic-bezier(0.23, 1, 0.32, 1);
-    top: 240px;
+    top: 330px;
   }
   .investor-zone {
     display: flex;
@@ -612,7 +648,7 @@ animation: status 2s easy forwards;
     align-items: center;
     flex-direction: column;
     background-color: rgba(0, 8, 51, 0.808);
-    top: 240px;
+    top: 330px;
     /* box-sizing: border-box; */
     width: fit-content;
     height: fit-content;
@@ -666,6 +702,12 @@ animation: status 2s easy forwards;
     padding: 15px;
     letter-spacing: 1px;
   }
+  .contact-data{
+    height: 180px;
+  }
+  .contact-zone{
+    flex-direction: column;
+      }
 }
 
 @media screen and (max-width: 700px) {
@@ -736,6 +778,13 @@ animation: status 2s easy forwards;
     width: 350px;
     top: 160px;
     box-sizing: content-box;
+  }
+
+  .main-heading {
+    margin-bottom: 10px;
+    font-family: 'Broadway';
+    letter-spacing: 6px;
+    word-spacing: 2px;
   }
 
   li.li-nav > * {
@@ -835,6 +884,10 @@ box-sizing: border-box;
     background-color: rgba(0, 8, 51, 0.808);
     box-shadow: 2px 4px 10px black;
     min-height: max-content;
+    
+  }
+  .contact-zone{
+flex-direction: column;
   }
   .innov-zone-boxes {
     margin:0px;
@@ -859,30 +912,23 @@ box-sizing: border-box;
 display: none;
   }
   .main-heading-span1{
-    margin-top: 30px;
+    margin-top: 20px;
     font-size: x-large;
     display: inline-block;
     width: auto;
     font-family: "custom";
     color: rgb(255, 217, 0);
-    font-weight: 500;
+    font-weight: 600;
     bottom: 100px;
     letter-spacing: 2px;
-    font-size: 2rem;
+    font-size: 1.3rem;
     line-height: 45px;
   }
-  .contact-zone{
-    background-color: rgba(0, 8, 51, 0.808);
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 0 auto;
-    flex-direction: column;
-    height: max-content;
-    width: 320px;
-    box-sizing: border-box;
+ 
+  .contact-data{
+    height: 180px;
   }
-  form
+  /* form
   
   input{
     margin: 5px;
@@ -909,5 +955,5 @@ display: none;
     font-size: 1rem;
     padding: 10px;
     outline: none;
-  }
+  } */
 }
